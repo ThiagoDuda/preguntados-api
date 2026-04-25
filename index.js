@@ -9,16 +9,6 @@ app.use(cors({
     methods: ['GET']
 }));
 
-const preguntas = [
-    {
-        id: 1,
-        pregunta: '¿Cuál es la capital de Francia?',
-        opciones: ['Madrid', 'París', 'Roma', 'Berlín'],
-        correcta: 'París'
-    },
-  // más preguntas...
-];
-
 app.get('/', (req, res) => {
     res.status(200).json({
         message: 'API lista.'
