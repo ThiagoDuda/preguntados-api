@@ -1,7 +1,9 @@
 const express = require('express');
 const cors = require('cors');
 const app = express();
+
 const preguntas = require('./preguntas.json');
+const palbras = require('./palabras.json')
 
 const PORT = process.env.PORT || 3000;
 
@@ -14,6 +16,10 @@ app.get('/', (req, res) => {
         message: 'API lista.'
     });
 })
+
+app.get('/palabras', (req, res) => {
+    res.json(palbras);
+});
 
 app.get('/preguntas', (req, res) => {
     res.json(preguntas);
